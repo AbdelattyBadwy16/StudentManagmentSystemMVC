@@ -116,31 +116,24 @@
         <li><a th:href="@{/courses}">Courses</a></li>
     </ul>
 </div>
-<a th:href="@{/students/add}">
-    <button class="add-button" >Add Student</button>
+<a th:href="@{/courses/add}">
+    <button class="add-button" >Add Course</button>
 </a>
 
-<h1>All Students</h1>
+<h1>All Courses</h1>
 
 <table>
     <tr>
-        <th>FirstName</th>
-        <th>LastName</th>
-        <th>Email</th>
+        <th>Name</th>
         <th>Operation</th>
     </tr>
-    <tr th:each="student : ${students}">
-        <td th:text="${student.firstName}">First</td>
-        <td th:text="${student.lastName}">Last</td>
-        <td th:text="${student.email}">email@example.com</td>
+    <tr th:each="course : ${courses}">
+        <td th:text="${course.name}"></td>
         <td>
-            <form th:action="@{/students/delete/{id}(id=${student.id})}" method="post" style="display:inline">
+            <form th:action="@{/courses/delete/{id}(id=${course.id})}" method="post" style="display:inline">
                 <input type="hidden" name="_method" value="delete"/>
                 <button type="submit">Delete</button>
             </form>
-            <a th:href="@{/students/edit/{id}(id=${student.id})}">
-                <button>Edit</button>
-            </a>
         </td>
     </tr>
 </table>

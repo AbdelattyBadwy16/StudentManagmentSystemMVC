@@ -24,19 +24,19 @@ public class Course {
         this.name = name;
     }
 
-    void setId(int id){
+    public void setId(int id){
         this.id = id;
     }
 
-    int getId(){
+    public int getId(){
         return this.id;
     }
 
-    void setName(String name){
+    public void setName(String name){
         this.name = name;
     }
 
-    String getName(){
+    public String getName(){
         return name;
     }
 

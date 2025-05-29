@@ -21,4 +21,19 @@ public class StudentServiceImpl implements StudentService {
     public Student saveStudent(Student student){
         return studentRepository.save(student);
     }
+
+    @Override
+    public Student getStudent(int id){
+        return studentRepository.findById(id).orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
+    }
+
+    @Override
+    public void updateStudent(Student student){
+        studentRepository.save(student);
+    }
+
+    @Override
+    public void deleteStudent(Student student){
+        studentRepository.delete(student);
+    }
 }
